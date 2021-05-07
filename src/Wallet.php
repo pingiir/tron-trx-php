@@ -27,6 +27,9 @@ class Wallet implements WalletInterface
 
     public function __construct(Api $_api = null)
     {
+        /**
+         * Pingi
+         */
         if (is_null($_api)) {
             $this->_api = new Api((new Client([
                 'base_uri' => 'http://node.tron.pingi.co:8090'
