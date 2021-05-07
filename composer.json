@@ -1,6 +1,6 @@
 {
-    "name": "mattvb91/trontrx",
-    "description": "Library for interacting with the Tron blockchain through Tron-Grid",
+    "name": "imehrzadm/trontrx",
+    "description": "Library for interacting with the Tron blockchain through Tron-Grid (add a few conditions to remove API dependencies)",
     "type": "library",
     "require": {
         "ext-bcmath": "*",
@@ -21,6 +21,10 @@
         {
             "name": "Matthias von Bargen",
             "email": "matt@mavon.ie"
+        },
+        {
+            "name": "Mehrzad Moosavipoor",
+            "email": "imehrzadm@gmail.com"
         }
     ]
 }

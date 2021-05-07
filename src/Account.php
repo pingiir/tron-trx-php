@@ -1,13 +1,13 @@
 <?php
 
-namespace mattvb91\TronTrx;
+namespace imehrzadm\TronTrx;
 
 /**
  * Class Account
  *
  * @property Address $address
  *
- * @package mattvb91\TronTrx
+ * @package imehrzadm\TronTrx
  */
 class Account
 {

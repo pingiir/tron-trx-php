@@ -4,15 +4,15 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use mattvb91\TronTrx\Api;
-use mattvb91\TronTrx\Exceptions\TronErrorException;
+use imehrzadm\TronTrx\Api;
+use imehrzadm\TronTrx\Exceptions\TronErrorException;
 use PHPUnit\Framework\TestCase;
 
 class ApiTest extends TestCase
 {
     /**
-     * @covers \mattvb91\TronTrx\Api::getClient
-     * @covers \mattvb91\TronTrx\Api::__construct
+     * @covers \imehrzadm\TronTrx\Api::getClient
+     * @covers \imehrzadm\TronTrx\Api::__construct
      */
     public function testGetClientReturnsInstanceOfClient()
     {
@@ -21,8 +21,8 @@ class ApiTest extends TestCase
     }
 
     /**
-     * @covers \mattvb91\TronTrx\Api::post
-     * @covers \mattvb91\TronTrx\Api::checkForErrorResponse
+     * @covers \imehrzadm\TronTrx\Api::post
+     * @covers \imehrzadm\TronTrx\Api::checkForErrorResponse
      */
     public function testPostAssocTrueFalse()
     {
@@ -49,7 +49,7 @@ class ApiTest extends TestCase
     }
 
     /**
-     * @covers \mattvb91\TronTrx\Api::checkForErrorResponse
+     * @covers \imehrzadm\TronTrx\Api::checkForErrorResponse
      * @dataProvider getResponses
      */
     public function testErrorExceptionIsThrownWithAssoc($client, $assoc)

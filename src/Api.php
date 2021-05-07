@@ -1,13 +1,13 @@
 <?php
 
-namespace mattvb91\TronTrx;
+namespace imehrzadm\TronTrx;
 
 use GuzzleHttp\Client;
-use mattvb91\TronTrx\Exceptions\TronErrorException;
+use imehrzadm\TronTrx\Exceptions\TronErrorException;
 
 /**
  * Class Api
- * @package mattvb91\TronTrx
+ * @package imehrzadm\TronTrx
  */
 class Api
 {

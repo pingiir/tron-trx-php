@@ -1,10 +1,10 @@
 <?php
 
-namespace mattvb91\TronTrx;
+namespace imehrzadm\TronTrx;
 
 /**
  * Class Block
- * @package mattvb91\TronTrx
+ * @package imehrzadm\TronTrx
  */
 class Block
 {
