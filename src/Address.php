@@ -1,13 +1,13 @@
 <?php
 
-namespace imehrzadm\TronTrx;
+namespace imehrzadm\TronTrxAPI;
 
-use imehrzadm\TronTrx\Support\Base58Check;
-use imehrzadm\TronTrx\Support\Hash;
+use imehrzadm\TronTrxAPI\Support\Base58Check;
+use imehrzadm\TronTrxAPI\Support\Hash;
 
 /**
  * Class Address
- * @package imehrzadm\TronTrx
+ * @package imehrzadm\TronTrxAPI
  */
 class Address
 {

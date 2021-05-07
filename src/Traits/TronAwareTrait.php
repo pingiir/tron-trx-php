@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace imehrzadm\TronTrx\Traits;
+namespace imehrzadm\TronTrxAPI\Traits;
 
-use imehrzadm\TronTrx\Support\Base58Check;
+use imehrzadm\TronTrxAPI\Support\Base58Check;
 
 /**
  * @codeCoverageIgnore

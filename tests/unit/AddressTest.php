@@ -1,11 +1,11 @@
 <?php
 
-use imehrzadm\TronTrx\Address;
+use imehrzadm\TronTrxAPI\Address;
 
 class AddressTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers \imehrzadm\TronTrx\Address::__construct
+     * @covers \imehrzadm\TronTrxAPI\Address::__construct
      */
     public function testThatInvalidAddressThrowsException()
     {

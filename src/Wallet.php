@@ -1,21 +1,21 @@
 <?php
 
-namespace imehrzadm\TronTrx;
+namespace imehrzadm\TronTrxAPI;
 
 use kornrunner\Keccak;
-use imehrzadm\TronTrx\Exceptions\TransactionException;
-use imehrzadm\TronTrx\Exceptions\TronErrorException;
-use imehrzadm\TronTrx\Interfaces\WalletInterface;
-use imehrzadm\TronTrx\Support\Base58;
-use imehrzadm\TronTrx\Support\Base58Check;
-use imehrzadm\TronTrx\Support\Crypto;
-use imehrzadm\TronTrx\Support\Hash;
-use imehrzadm\TronTrx\Traits\TronAwareTrait;
+use imehrzadm\TronTrxAPI\Exceptions\TransactionException;
+use imehrzadm\TronTrxAPI\Exceptions\TronErrorException;
+use imehrzadm\TronTrxAPI\Interfaces\WalletInterface;
+use imehrzadm\TronTrxAPI\Support\Base58;
+use imehrzadm\TronTrxAPI\Support\Base58Check;
+use imehrzadm\TronTrxAPI\Support\Crypto;
+use imehrzadm\TronTrxAPI\Support\Hash;
+use imehrzadm\TronTrxAPI\Traits\TronAwareTrait;
 use Phactor\Key;
 
 /**
  * Class Wallet
- * @package imehrzadm\TronTrx
+ * @package imehrzadm\TronTrxAPI
  */
 class Wallet implements WalletInterface
 {

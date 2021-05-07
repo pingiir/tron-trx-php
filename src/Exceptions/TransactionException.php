@@ -1,6 +1,6 @@
 <?php
 
-namespace imehrzadm\TronTrx\Exceptions;
+namespace imehrzadm\TronTrxAPI\Exceptions;
 
 class TransactionException extends \Exception
 {

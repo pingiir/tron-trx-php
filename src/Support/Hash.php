@@ -1,6 +1,6 @@
 <?php
 
-namespace imehrzadm\TronTrx\Support;
+namespace imehrzadm\TronTrxAPI\Support;
 
 /**
  * @codeCoverageIgnore

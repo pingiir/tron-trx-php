@@ -1,15 +1,15 @@
 <?php
 
-namespace imehrzadm\TronTrx\Interfaces;
+namespace imehrzadm\TronTrxAPI\Interfaces;
 
-use imehrzadm\TronTrx\Account;
-use imehrzadm\TronTrx\Address;
-use imehrzadm\TronTrx\Block;
-use imehrzadm\TronTrx\Transaction;
+use imehrzadm\TronTrxAPI\Account;
+use imehrzadm\TronTrxAPI\Address;
+use imehrzadm\TronTrxAPI\Block;
+use imehrzadm\TronTrxAPI\Transaction;
 
 /**
  * Interface WalletInterface
- * @package imehrzadm\TronTrx\Interfaces
+ * @package imehrzadm\TronTrxAPI\Interfaces
  */
 interface WalletInterface
 {

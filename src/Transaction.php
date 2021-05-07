@@ -1,6 +1,6 @@
 <?php
 
-namespace imehrzadm\TronTrx;
+namespace imehrzadm\TronTrxAPI;
 
 class Transaction
 {

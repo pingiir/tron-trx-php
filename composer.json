@@ -1,5 +1,5 @@
 {
-    "name": "imehrzadm/trontrx",
+    "name": "imehrzadm/trontrxapi",
     "description": "Library for interacting with the Tron blockchain through Tron-Grid (add a few conditions to remove API dependencies)",
     "type": "library",
     "require": {

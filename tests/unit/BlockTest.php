@@ -1,13 +1,13 @@
 <?php
 
-use imehrzadm\TronTrx\Block;
+use imehrzadm\TronTrxAPI\Block;
 use PHPUnit\Framework\TestCase;
 
 class BlockTest extends TestCase
 {
 
     /**
-     * @covers \imehrzadm\TronTrx\Block::__construct
+     * @covers \imehrzadm\TronTrxAPI\Block::__construct
      */
     public function testConstructorThrowsException()
     {

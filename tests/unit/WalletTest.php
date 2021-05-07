@@ -1,22 +1,22 @@
 <?php
 
-namespace imehrzadm\TronTrx\Tests\Unit;
+namespace imehrzadm\TronTrxAPI\Tests\Unit;
 
-use imehrzadm\TronTrx\Exceptions\TronErrorException;
-use imehrzadm\TronTrx\Wallet;
+use imehrzadm\TronTrxAPI\Exceptions\TronErrorException;
+use imehrzadm\TronTrxAPI\Wallet;
 
 class WalletTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers \imehrzadm\TronTrx\Wallet::getAddressHex
+     * @covers \imehrzadm\TronTrxAPI\Wallet::getAddressHex
      */
     public function testGetAddressHexFromPubKeyHex()
     {
         $publicHex = '0469231c045fd16b02429ba4aa04c14d49cfae09e834052d27f8ab4a5c50000cf7de06fddb08d27ddbfaef93896b102b98e74326b0cca74647422c869a4c3758c0';
         $expectedAddressHex = '41fe7323249972344af4dad2f4dab2fcdbf254120e';
 
-        /** @var \imehrzadm\TronTrx\Wallet $wallet */
-        $wallet = $this->getMockBuilder(\imehrzadm\TronTrx\Wallet::class)
+        /** @var \imehrzadm\TronTrxAPI\Wallet $wallet */
+        $wallet = $this->getMockBuilder(\imehrzadm\TronTrxAPI\Wallet::class)
             ->disableOriginalConstructor()
             ->setMethodsExcept(['getAddressHex'])
             ->getMock();
@@ -26,12 +26,12 @@ class WalletTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers \imehrzadm\TronTrx\Wallet::getBase58CheckAddress
+     * @covers \imehrzadm\TronTrxAPI\Wallet::getBase58CheckAddress
      */
     public function testGetBase58CheckAddress()
     {
-        /** @var \imehrzadm\TronTrx\Wallet $wallet */
-        $wallet = $this->getMockBuilder(\imehrzadm\TronTrx\Wallet::class)
+        /** @var \imehrzadm\TronTrxAPI\Wallet $wallet */
+        $wallet = $this->getMockBuilder(\imehrzadm\TronTrxAPI\Wallet::class)
             ->disableOriginalConstructor()
             ->setMethodsExcept(['getBase58CheckAddress'])
             ->getMock();
@@ -43,14 +43,14 @@ class WalletTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers \imehrzadm\TronTrx\Wallet::generateAddress
+     * @covers \imehrzadm\TronTrxAPI\Wallet::generateAddress
      */
     public function testAttemptLimitWillThrowException()
     {
         $this->expectException(TronErrorException::class);
 
         /** @var Wallet $wallet */
-        $wallet = $this->getMockBuilder(\imehrzadm\TronTrx\Wallet::class)
+        $wallet = $this->getMockBuilder(\imehrzadm\TronTrxAPI\Wallet::class)
             ->disableOriginalConstructor()
             ->setMethodsExcept(['generateAddress'])
             ->getMock();

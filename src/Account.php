@@ -1,13 +1,13 @@
 <?php
 
-namespace imehrzadm\TronTrx;
+namespace imehrzadm\TronTrxAPI;
 
 /**
  * Class Account
  *
  * @property Address $address
  *
- * @package imehrzadm\TronTrx
+ * @package imehrzadm\TronTrxAPI
  */
 class Account
 {
