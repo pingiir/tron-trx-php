@@ -2,7 +2,7 @@
 
 namespace imehrzadm\TronTrxAPI;
 
-use kornrunner\Keccak;
+
 use imehrzadm\TronTrxAPI\Exceptions\TransactionException;
 use imehrzadm\TronTrxAPI\Exceptions\TronErrorException;
 use imehrzadm\TronTrxAPI\Interfaces\WalletInterface;
@@ -12,6 +12,8 @@ use imehrzadm\TronTrxAPI\Support\Crypto;
 use imehrzadm\TronTrxAPI\Support\Hash;
 use imehrzadm\TronTrxAPI\Traits\TronAwareTrait;
 use Phactor\Key;
+use GuzzleHttp\Client;
+use kornrunner\Keccak;
 
 /**
  * Class Wallet
@@ -23,9 +25,14 @@ class Wallet implements WalletInterface
 
     private $_api;
 
-    public function __construct(Api $_api)
+    public function __construct(Api $_api = null)
     {
-        $this->_api = $_api;
+        if (is_null($_api)) {
+            $this->_api = new Api((new Client([
+                'base_uri' => 'http://node.tron.pingi.co:8090'
+            ])));
+        } else
+            $this->_api = $_api;
     }
 
     public function genKeyPair(): array
@@ -144,9 +151,9 @@ class Wallet implements WalletInterface
     public function createTransaction(Address $toAddress, Address $ownerAddress, float $amount = 0): Transaction
     {
         $body = $this->_api->post('/wallet/createtransaction', [
-            'to_address'    => $toAddress->hexAddress,
+            'to_address' => $toAddress->hexAddress,
             'owner_address' => $ownerAddress->hexAddress,
-            'amount'        => $amount,
+            'amount' => $amount,
         ]);
 
         return new Transaction(
@@ -166,7 +173,7 @@ class Wallet implements WalletInterface
 
         $body = $this->_api->post('/wallet/gettransactionsign', [
             'transaction' => $transactionArray,
-            'privateKey'  => $privateKey,
+            'privateKey' => $privateKey,
         ]);
 
         $transaction->signature = $body->signature;
