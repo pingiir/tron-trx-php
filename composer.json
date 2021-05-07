@@ -1,6 +1,6 @@
 {
     "name": "imehrzadm/trontrxapi",
-    "description": "Library for interacting with the Tron blockchain through Tron-Grid (add a few conditions to remove API dependencies - PINGI.CO)",
+    "description": "Library for interacting with the Tron blockchain through Tron-Grid (add a few conditions to remove API dependencies - PINGI.CO PINGI.IR)",
     "type": "library",
     "require": {
         "ext-bcmath": "*",
