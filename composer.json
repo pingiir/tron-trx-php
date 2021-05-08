@@ -1,5 +1,5 @@
 {
-    "name": "imehrzadm/trontrxapi",
+    "name": "pingi/trontrxapi",
     "description": "Library for interacting with the Tron blockchain through Tron-Grid (add a few conditions to remove API dependencies - PINGI.CO PINGI.IR)",
     "type": "library",
     "require": {
