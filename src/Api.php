@@ -1,13 +1,13 @@
 <?php
 
-namespace imehrzadm\TronTrxAPI;
+namespace pingi\TronTrxAPI;
 
 use GuzzleHttp\Client;
-use imehrzadm\TronTrxAPI\Exceptions\TronErrorException;
+use pingi\TronTrxAPI\Exceptions\TronErrorException;
 
 /**
  * Class Api
- * @package imehrzadm\TronTrxAPI
+ * @package pingi\TronTrxAPI
  */
 class Api
 {

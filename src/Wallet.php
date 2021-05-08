@@ -1,23 +1,23 @@
 <?php
 
-namespace imehrzadm\TronTrxAPI;
+namespace pingi\TronTrxAPI;
 
 
-use imehrzadm\TronTrxAPI\Exceptions\TransactionException;
-use imehrzadm\TronTrxAPI\Exceptions\TronErrorException;
-use imehrzadm\TronTrxAPI\Interfaces\WalletInterface;
-use imehrzadm\TronTrxAPI\Support\Base58;
-use imehrzadm\TronTrxAPI\Support\Base58Check;
-use imehrzadm\TronTrxAPI\Support\Crypto;
-use imehrzadm\TronTrxAPI\Support\Hash;
-use imehrzadm\TronTrxAPI\Traits\TronAwareTrait;
+use pingi\TronTrxAPI\Exceptions\TransactionException;
+use pingi\TronTrxAPI\Exceptions\TronErrorException;
+use pingi\TronTrxAPI\Interfaces\WalletInterface;
+use pingi\TronTrxAPI\Support\Base58;
+use pingi\TronTrxAPI\Support\Base58Check;
+use pingi\TronTrxAPI\Support\Crypto;
+use pingi\TronTrxAPI\Support\Hash;
+use pingi\TronTrxAPI\Traits\TronAwareTrait;
 use Phactor\Key;
 use GuzzleHttp\Client;
 use kornrunner\Keccak;
 
 /**
  * Class Wallet
- * @package imehrzadm\TronTrxAPI
+ * @package pingi\TronTrxAPI
  */
 class Wallet implements WalletInterface
 {

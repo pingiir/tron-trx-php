@@ -1,15 +1,15 @@
 <?php
 
-namespace imehrzadm\TronTrxAPI\Interfaces;
+namespace pingi\TronTrxAPI\Interfaces;
 
-use imehrzadm\TronTrxAPI\Account;
-use imehrzadm\TronTrxAPI\Address;
-use imehrzadm\TronTrxAPI\Block;
-use imehrzadm\TronTrxAPI\Transaction;
+use pingi\TronTrxAPI\Account;
+use pingi\TronTrxAPI\Address;
+use pingi\TronTrxAPI\Block;
+use pingi\TronTrxAPI\Transaction;
 
 /**
  * Interface WalletInterface
- * @package imehrzadm\TronTrxAPI\Interfaces
+ * @package pingi\TronTrxAPI\Interfaces
  */
 interface WalletInterface
 {

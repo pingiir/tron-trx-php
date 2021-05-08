@@ -1,10 +1,10 @@
 <?php
 
-namespace imehrzadm\TronTrxAPI;
+namespace pingi\TronTrxAPI;
 
 /**
  * Class Block
- * @package imehrzadm\TronTrxAPI
+ * @package pingi\TronTrxAPI
  */
 class Block
 {

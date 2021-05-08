@@ -4,12 +4,12 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use imehrzadm\TronTrxAPI\Account;
-use imehrzadm\TronTrxAPI\Address;
-use imehrzadm\TronTrxAPI\Api;
-use imehrzadm\TronTrxAPI\Block;
-use imehrzadm\TronTrxAPI\Exceptions\TronErrorException;
-use imehrzadm\TronTrxAPI\Transaction;
+use pingi\TronTrxAPI\Account;
+use pingi\TronTrxAPI\Address;
+use pingi\TronTrxAPI\Api;
+use pingi\TronTrxAPI\Block;
+use pingi\TronTrxAPI\Exceptions\TronErrorException;
+use pingi\TronTrxAPI\Transaction;
 use PHPUnit\Framework\TestCase;
 
 class WalletTest extends TestCase
@@ -30,14 +30,14 @@ class WalletTest extends TestCase
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::__construct
-     * @covers \imehrzadm\TronTrxAPI\Address::__construct
-     * @covers \imehrzadm\TronTrxAPI\Wallet::generateAddress
-     * @covers \imehrzadm\TronTrxAPI\Wallet::genKeyPair
+     * @covers \pingi\TronTrxAPI\Wallet::__construct
+     * @covers \pingi\TronTrxAPI\Address::__construct
+     * @covers \pingi\TronTrxAPI\Wallet::generateAddress
+     * @covers \pingi\TronTrxAPI\Wallet::genKeyPair
      */
     public function testGenerateAddress()
     {
-        $wallet = new imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new pingi\TronTrxAPI\Wallet($this->_api);
 
         $address = $wallet->generateAddress();
         $this->assertInstanceOf(Address::class, $address);
@@ -46,12 +46,12 @@ class WalletTest extends TestCase
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::validateAddress
-     * @covers \imehrzadm\TronTrxAPI\Address::isValid
+     * @covers \pingi\TronTrxAPI\Wallet::validateAddress
+     * @covers \pingi\TronTrxAPI\Address::isValid
      */
     public function testValidatingAddress()
     {
-        $wallet = new imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new pingi\TronTrxAPI\Wallet($this->_api);
 
         $address = new Address('test', '', '');
         $this->assertFalse($address->isValid());
@@ -71,7 +71,7 @@ class WalletTest extends TestCase
      */
     public function testSignatureHexSigning(Address $address)
     {
-        $wallet = new imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new pingi\TronTrxAPI\Wallet($this->_api);
 
         $toHex = $wallet->toHex($address->address);
         $this->assertEquals($address->hexAddress, $toHex);
@@ -80,14 +80,14 @@ class WalletTest extends TestCase
 
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::easyTransferByPrivate
+     * @covers \pingi\TronTrxAPI\Wallet::easyTransferByPrivate
      * @return Address
      */
     public function testEasyTransferByPrivateThrowsException()
     {
         $this->expectException(Exception::class);
 
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $address = $wallet->generateAddress();
 
         $this->assertTrue($wallet->easyTransferByPrivate(
@@ -99,12 +99,12 @@ class WalletTest extends TestCase
 
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::getAccount
-     * @covers \imehrzadm\TronTrxAPI\Account::__construct
+     * @covers \pingi\TronTrxAPI\Wallet::getAccount
+     * @covers \pingi\TronTrxAPI\Account::__construct
      */
     public function testGetAccount()
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $address = $wallet->generateAddress();
         $this->instantiateAddress($address);
 
@@ -116,7 +116,7 @@ class WalletTest extends TestCase
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::getAccount
+     * @covers \pingi\TronTrxAPI\Wallet::getAccount
      */
     public function testGetAccountReturnsNullOnFail()
     {
@@ -129,19 +129,19 @@ class WalletTest extends TestCase
         $client = new Client(['handler' => $handler]);
 
         $api = new Api($client);
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($api);
 
         $address = new Address('NOT_VALID', '', $wallet->toHex('NOT_VALID'));
         $this->assertNull($wallet->getAccount($address));
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::createTransaction
-     * @covers \imehrzadm\TronTrxAPI\Transaction::__construct
+     * @covers \pingi\TronTrxAPI\Wallet::createTransaction
+     * @covers \pingi\TronTrxAPI\Transaction::__construct
      */
     public function testCreateTransaction()
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
 
         $toAddress = $wallet->generateAddress();
         $fromAddress = $wallet->generateAddress();
@@ -154,12 +154,12 @@ class WalletTest extends TestCase
     }
 
     /**
-     * @covers  \imehrzadm\TronTrxAPI\Wallet::signTransaction
+     * @covers  \pingi\TronTrxAPI\Wallet::signTransaction
      * @depends testCreateTransaction
      */
     public function testSignTransaction(array $input)
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
 
         /** @var Transaction $transaction */
         $transaction = $input['transaction'];
@@ -172,24 +172,24 @@ class WalletTest extends TestCase
     }
 
     /**
-     * @covers  \imehrzadm\TronTrxAPI\Wallet::broadcastTransaction
+     * @covers  \pingi\TronTrxAPI\Wallet::broadcastTransaction
      */
     public function testBroadcastTransactionFailsWhenNotSigned()
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
 
         $this->expectException(\Exception::class);
         $wallet->broadcastTransaction(new Transaction('', new stdClass()));
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::broadcastTransaction
-     * @covers \imehrzadm\TronTrxAPI\Wallet::getTransactionById
+     * @covers \pingi\TronTrxAPI\Wallet::broadcastTransaction
+     * @covers \pingi\TronTrxAPI\Wallet::getTransactionById
      * @depends testSignTransaction
      */
     public function testBroadcastTransaction(Transaction $transaction)
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $hexAddress = $transaction->raw_data->contract[0]->parameter->value->owner_address;
 
         $address = new Address($wallet->fromHex($hexAddress), '', $hexAddress);
@@ -206,11 +206,11 @@ class WalletTest extends TestCase
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::getAccountNet
+     * @covers \pingi\TronTrxAPI\Wallet::getAccountNet
      */
     public function testGetAccountNet()
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $netAccountTest = $wallet->generateAddress();
 
         $this->instantiateAddress($netAccountTest);
@@ -223,11 +223,11 @@ class WalletTest extends TestCase
 
     /**
      * @depends testGetAccount
-     * @covers  \imehrzadm\TronTrxAPI\Wallet::getAccountNet
+     * @covers  \pingi\TronTrxAPI\Wallet::getAccountNet
      */
     public function testGetAccountNetMock(Account $account)
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $this->assertNull($wallet->getAccountNet($account->address));
 
         // Create a mock and queue two responses.
@@ -243,30 +243,30 @@ class WalletTest extends TestCase
         $client = new Client(['handler' => $handler]);
 
         $api = new Api($client);
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($api);
 
         $this->assertNotEmpty($wallet->getAccountNet($account->address));
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::getNowBlock
+     * @covers \pingi\TronTrxAPI\Wallet::getNowBlock
      */
     public function testNowBlock()
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $block = $wallet->getNowBlock();
-        $this->assertInstanceOf(\imehrzadm\TronTrxAPI\Block::class, $block);
+        $this->assertInstanceOf(\pingi\TronTrxAPI\Block::class, $block);
 
         return $block;
     }
 
     /**
-     * @covers \imehrzadm\TronTrxAPI\Wallet::getBlockById
+     * @covers \pingi\TronTrxAPI\Wallet::getBlockById
      * @depends testNowBlock
      */
     public function testBlockById(Block $block)
     {
-        $wallet = new \imehrzadm\TronTrxAPI\Wallet($this->_api);
+        $wallet = new \pingi\TronTrxAPI\Wallet($this->_api);
         $blockById = $wallet->getBlockById($block->blockID);
 
         $this->assertEquals($block, $blockById);

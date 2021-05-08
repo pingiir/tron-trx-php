@@ -1,13 +1,13 @@
 <?php
 
-namespace imehrzadm\TronTrxAPI;
+namespace pingi\TronTrxAPI;
 
 /**
  * Class Account
  *
  * @property Address $address
  *
- * @package imehrzadm\TronTrxAPI
+ * @package pingi\TronTrxAPI
  */
 class Account
 {
