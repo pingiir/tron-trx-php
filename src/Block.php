@@ -1,10 +1,10 @@
 <?php
 
-namespace pingi\TronTrxAPI;
+namespace pingi\trontrxapi;
 
 /**
  * Class Block
- * @package pingi\TronTrxAPI
+ * @package pingi\trontrxapi
  */
 class Block
 {

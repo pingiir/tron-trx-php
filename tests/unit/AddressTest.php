@@ -1,11 +1,11 @@
 <?php
 
-use pingi\TronTrxAPI\Address;
+use pingi\trontrxapi\Address;
 
 class AddressTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers \pingi\TronTrxAPI\Address::__construct
+     * @covers \pingi\trontrxapi\Address::__construct
      */
     public function testThatInvalidAddressThrowsException()
     {

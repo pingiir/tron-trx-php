@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace pingi\TronTrxAPI\Traits;
+namespace pingi\trontrxapi\Traits;
 
-use pingi\TronTrxAPI\Support\Base58Check;
+use pingi\trontrxapi\Support\Base58Check;
 
 /**
  * @codeCoverageIgnore

@@ -1,15 +1,15 @@
 <?php
 
-namespace pingi\TronTrxAPI\Interfaces;
+namespace pingi\trontrxapi\Interfaces;
 
-use pingi\TronTrxAPI\Account;
-use pingi\TronTrxAPI\Address;
-use pingi\TronTrxAPI\Block;
-use pingi\TronTrxAPI\Transaction;
+use pingi\trontrxapi\Account;
+use pingi\trontrxapi\Address;
+use pingi\trontrxapi\Block;
+use pingi\trontrxapi\Transaction;
 
 /**
  * Interface WalletInterface
- * @package pingi\TronTrxAPI\Interfaces
+ * @package pingi\trontrxapi\Interfaces
  */
 interface WalletInterface
 {

@@ -5,11 +5,11 @@ use PHPUnit\Framework\TestCase;
 class TransactionTest extends TestCase
 {
     /**
-     * @covers \pingi\TronTrxAPI\Transaction::isSigned
+     * @covers \pingi\trontrxapi\Transaction::isSigned
      */
     public function testIsSigned()
     {
-        $transaction = new \pingi\TronTrxAPI\Transaction('', new stdClass());
+        $transaction = new \pingi\trontrxapi\Transaction('', new stdClass());
         $this->assertFalse($transaction->isSigned());
 
         $transaction->signature = ['wdwd'];

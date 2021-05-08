@@ -1,6 +1,6 @@
 <?php
 
-namespace pingi\TronTrxAPI\Support;
+namespace pingi\trontrxapi\Support;
 
 /**
  * @codeCoverageIgnore

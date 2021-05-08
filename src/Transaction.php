@@ -1,6 +1,6 @@
 <?php
 
-namespace pingi\TronTrxAPI;
+namespace pingi\trontrxapi;
 
 class Transaction
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace pingi\TronTrxAPI\Exceptions;
+namespace pingi\trontrxapi\Exceptions;
 
 /**
  * Class TronErrorException
- * @package pingi\TronTrxAPI\Exceptions
+ * @package pingi\trontrxapi\Exceptions
  */
 class TronErrorException extends \Exception
 {

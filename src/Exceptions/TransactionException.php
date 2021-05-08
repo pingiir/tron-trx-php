@@ -1,6 +1,6 @@
 <?php
 
-namespace pingi\TronTrxAPI\Exceptions;
+namespace pingi\trontrxapi\Exceptions;
 
 class TransactionException extends \Exception
 {

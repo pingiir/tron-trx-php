@@ -1,13 +1,13 @@
 <?php
 
-namespace pingi\TronTrxAPI;
+namespace pingi\trontrxapi;
 
-use pingi\TronTrxAPI\Support\Base58Check;
-use pingi\TronTrxAPI\Support\Hash;
+use pingi\trontrxapi\Support\Base58Check;
+use pingi\trontrxapi\Support\Hash;
 
 /**
  * Class Address
- * @package pingi\TronTrxAPI
+ * @package pingi\trontrxapi
  */
 class Address
 {
