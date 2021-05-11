@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "ext-bcmath": "*",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "*",
         "ionux/phactor": "1.0.8",
         "kornrunner/keccak": "^1.0"
     },
